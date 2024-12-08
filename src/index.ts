@@ -10,7 +10,7 @@ import type {
   Text,
   CDATA,
 } from "domhandler";
-import { encodeXML, escapeAttribute, escapeText } from "entities";
+import { encodeXML, escapeAttribute, escapeText } from "./escape";
 
 /**
  * Mixed-case SVG and MathML tags & attributes
@@ -83,7 +83,7 @@ function replaceQuotes(value: string): string {
  */
 function formatAttributes(
   attributes: Record<string, string | null> | undefined,
-  opts: DomSerializerOptions,
+  opts: DomSerializerOptions
 ) {
   if (!attributes) return;
 
@@ -147,7 +147,7 @@ const singleTag = new Set([
  */
 export function render(
   node: AnyNode | ArrayLike<AnyNode>,
-  options: DomSerializerOptions = {},
+  options: DomSerializerOptions = {}
 ): string {
   const nodes = "length" in node ? node : [node];
 

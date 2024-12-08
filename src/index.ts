@@ -10,7 +10,7 @@ import type {
   Text,
   CDATA,
 } from "domhandler";
-import { encodeXML, escapeAttribute, escapeText } from "./escape";
+import { encodeXML, escapeAttribute, escapeText } from "./escape.js";
 
 /**
  * Mixed-case SVG and MathML tags & attributes

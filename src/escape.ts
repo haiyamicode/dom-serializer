@@ -1,4 +1,4 @@
-export const xmlReplacer = /["$&'<>]/g;
+export const xmlReplacer = /["&'<>]/g;
 
 const xmlCodeMap = new Map([
   [34, "&quot;"],

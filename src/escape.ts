@@ -3,7 +3,6 @@ export const xmlReplacer = /["&'<>]/g;
 const xmlCodeMap = new Map([
   [34, "&quot;"],
   [38, "&amp;"],
-  [39, "&apos;"],
   [60, "&lt;"],
   [62, "&gt;"],
 ]);

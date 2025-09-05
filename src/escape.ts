@@ -1,4 +1,4 @@
-export const xmlReplacer = /[<>]/g;
+export const xmlReplacer = /[<>&]/g;
 
 const xmlCodeMap = new Map([
   [38, "&amp;"],
@@ -106,7 +106,7 @@ function getEscaper(
  *
  * @param data String to escape.
  */
-export const escapeUTF8 = getEscaper(/[<>]/g, xmlCodeMap);
+export const escapeUTF8 = getEscaper(/[<>&]/g, xmlCodeMap);
 
 /**
  * Encodes all characters that have to be escaped in HTML attributes,
@@ -131,7 +131,7 @@ export const escapeAttribute = getEscaper(
  * @param data String to escape.
  */
 export const escapeText = getEscaper(
-  /[<>\u00A0]/g,
+  /[<>&\u00A0]/g,
   new Map([
     [38, "&amp;"],
     [60, "&lt;"],

@@ -1,6 +1,7 @@
 export const xmlReplacer = /[<>]/g;
 
 const xmlCodeMap = new Map([
+  [38, "&amp;"],
   [60, "&lt;"],
   [62, "&gt;"],
 ]);
@@ -118,6 +119,7 @@ export const escapeAttribute = getEscaper(
   new Map([
     [34, "&quot;"],
     [38, "&amp;"],
+    [38, "&amp;"],
     [160, "&nbsp;"],
   ])
 );
@@ -131,6 +133,7 @@ export const escapeAttribute = getEscaper(
 export const escapeText = getEscaper(
   /[<>\u00A0]/g,
   new Map([
+    [38, "&amp;"],
     [60, "&lt;"],
     [62, "&gt;"],
     [160, "&nbsp;"],
